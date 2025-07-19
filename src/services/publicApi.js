@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// ✅ نقرأ الرابط من متغير البيئة VITE_API_BASE_URL
-const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}public/menu`;
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL.replace(/\/$/, "")}/public/menu`;
 
 export const fetchMenuData = async (linkCode) => {
   try {
