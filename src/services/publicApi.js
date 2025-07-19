@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// عدّل هذا الرابط حسب بيئة العمل (لوكال أو سيرفر)
-const BASE_URL = "http://localhost:3000/api/public/menu"; // أو رابط السيرفر الحقيقي عند النشر
+// ✅ نقرأ الرابط من متغير البيئة VITE_API_BASE_URL
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/public/menu`;
 
 export const fetchMenuData = async (linkCode) => {
   try {
