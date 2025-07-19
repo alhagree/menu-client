@@ -112,9 +112,7 @@ async mounted() {
       return {
         id: section.se_id,
         name: section.se_name,
-        image: section.se_image
-  ? `${baseUrl}/uploads/sections/${linkCode}/${section.se_image}`
-  : "/default-icon.png",
+        image: section.se_image || "/default-icon.png",
 
         items: data.items
           .filter((item) => item.it_se_id === section.se_id)
@@ -123,7 +121,7 @@ async mounted() {
             name: item.it_name,
             description: item.it_description,
             price: item.it_price,
-            image: `${baseUrl}/uploads/items/${linkCode}/${item.it_image}`,
+            image: item.it_image || "/default-item.png",
           })),
       };
     });
