@@ -83,6 +83,7 @@ export default {
   color: #fff;
   font-size: 0.85em;
   padding: 4px 8px;
+  text-align: center;
   border-radius: 6px;
   margin-top: 8px;
   display: inline-block;
