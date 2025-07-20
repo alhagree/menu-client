@@ -106,12 +106,7 @@ async mounted() {
     const data = await fetchMenuData(linkCode);
 
     this.clientName = data.client_name;
-    this.logoUrl = data.logo_url;
-    /**********************
-    this.logoUrl = data.logoUrl && data.logoUrl.trim() !== ""
-    ? data.logo_url
-    : "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/logo.png?updatedAt=1753026004161";
-    /********************/
+    this.logoUrl = data.logo_url || "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/logo.png?updatedAt=1753026004161";
 
     this.sections = data.sections.map((section) => {
       return {
