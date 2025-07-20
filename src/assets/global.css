@@ -36,8 +36,8 @@ button {
   margin-top: 200px !important; /* ← هذا يحجز مكان للهيدر والأقسام */
   padding: 10px;
   width: 100%;
-  
-  direction: rtl;
+  max-width: none;
+  direction: ltr;
 }
 
 @media (min-width: 768px) {
