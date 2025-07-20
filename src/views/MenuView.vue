@@ -122,6 +122,7 @@ async mounted() {
             description: item.it_description,
             price: item.it_price,
             image: item.it_image || "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/item.png?updatedAt=1753025679030",
+            available: item.it_available == 1 // ← نضيف هذا
           })),
       };
     });
