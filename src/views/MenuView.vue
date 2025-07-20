@@ -112,7 +112,7 @@ async mounted() {
       return {
         id: section.se_id,
         name: section.se_name,
-        image: section.se_image || "/default-icon.png",
+        image: section.se_image || "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/section.jpg?updatedAt=1753025684000",
 
         items: data.items
           .filter((item) => item.it_se_id === section.se_id)
@@ -121,7 +121,7 @@ async mounted() {
             name: item.it_name,
             description: item.it_description,
             price: item.it_price,
-            image: item.it_image || "/default-item.png",
+            image: item.it_image || "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/item.png?updatedAt=1753025679030",
           })),
       };
     });
