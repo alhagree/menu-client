@@ -37,20 +37,10 @@ button {
   padding: 10px;
   width: 100%;
   max-width: none;
-  direction: ltr;
+  direction: rtl;
 }
 
-@media (min-width: 768px) {
-  .menu-view {
-    max-width: 720px;
-  }
-}
 
-@media (min-width: 1024px) {
-  .menu-view {
-    max-width: 960px;
-  }
-}
 
 .header {
   position: fixed; /* ✅ بدل sticky */
