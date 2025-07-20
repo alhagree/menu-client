@@ -64,32 +64,27 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   height: 100vh;
   background-color: #eef1f4;
   padding: 40px 20px 20px;
   text-align: center;
 }
 
-.logo {
-  width: 200px;
-  margin-bottom: 15px;
-  display: block; /* ✅ يجعلها تأخذ سطر كامل */
-}
 
 .loading-text,
 .error-message {
   font-size: 1.3rem;
   font-weight: bold;
-  margin-bottom: 20px;
-  display: block; /* ✅ يجعلها تأخذ سطر كامل */
+  margin-bottom: 20px;  
 }
 
 .error-message {
   color: #dc3545;
 }
 
-.failed-image {
+.failed-image,
+.logo {
   max-width: 280px;
   height: auto;
   object-fit: contain;
