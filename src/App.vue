@@ -89,6 +89,7 @@ export default {
   height: auto;
   object-fit: contain;
   display: block;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 </style>
