@@ -64,7 +64,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   height: 100vh;
   background-color: #eef1f4;
   padding: 20px;
