@@ -92,4 +92,4 @@ export default {
   height: auto;
   object-fit: contain;
 }
-</style>
+</style> 
