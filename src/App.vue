@@ -67,13 +67,14 @@ export default {
   justify-content: start;
   height: 100vh;
   background-color: #eef1f4;
-  padding: 20px;
+  padding: 40px 20px 20px;
   text-align: center;
 }
 
 .logo {
-  width: 100px;
+  width: 200px;
   margin-bottom: 15px;
+  display: block; /* ✅ يجعلها تأخذ سطر كامل */
 }
 
 .loading-text,
@@ -91,5 +92,6 @@ export default {
   max-width: 280px;
   height: auto;
   object-fit: contain;
+  display: block;
 }
-</style> 
+</style>
