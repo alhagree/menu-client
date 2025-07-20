@@ -82,6 +82,7 @@ export default {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 20px;
+  display: block; /* ✅ يجعلها تأخذ سطر كامل */
 }
 
 .error-message {
