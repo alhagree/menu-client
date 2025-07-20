@@ -2,12 +2,12 @@
 <template>
   <div id="app">
     <div v-if="loading" class="centered-container">
-      <img class="logo" :src="logoUrl" alt="Logo" />
+      <img class="failed-image" :src="logoUrl" alt="Logo" />
       <p class="loading-text">جاري التحميل...</p>
     </div>
 
     <div v-else-if="error" class="centered-container">
-      <img class="logo" :src="logoUrl" alt="Logo" />
+      <img class="failed-image" :src="logoUrl" alt="Logo" />
       <p class="error-message">{{ error }}</p>
       <img class="failed-image" :src="failedImageUrl" alt="فشل" />
     </div>
