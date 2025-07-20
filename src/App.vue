@@ -32,7 +32,7 @@ export default {
       logoUrl:
         "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/logo.png?updatedAt=1753026004161",
       failedImageUrl:
-        "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/failed.jpg?updatedAt=1753027482825",
+        "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/failed.png?updatedAt=1753047083714",
     };
   },
   async mounted() {
