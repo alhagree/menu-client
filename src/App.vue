@@ -1,17 +1,15 @@
 <!-- menu-client/src/App.vue -->
 <template>
   <div id="app">
-    <div v-if="loading" class="loader-container">
+    <div v-if="loading" class="centered-container">
       <img class="logo" :src="logoUrl" alt="Logo" />
       <p class="loading-text">جاري التحميل...</p>
     </div>
 
-    <div v-else-if="error" class="error-container">
-      <img class="logo top" :src="logoUrl" alt="Logo" />
+    <div v-else-if="error" class="centered-container">
+      <img class="logo" :src="logoUrl" alt="Logo" />
       <p class="error-message">{{ error }}</p>
-      <div class="failed-card">
-        <img class="failed-image" :src="failedImageUrl" alt="فشل" />
-      </div>
+      <img class="failed-image" :src="failedImageUrl" alt="فشل" />
     </div>
 
     <div v-else>
@@ -62,50 +60,36 @@ export default {
 </script>
 
 <style scoped>
-.loader-container,
-.error-container {
+.centered-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background-color: #eef1f4;
-  text-align: center;
   padding: 20px;
+  text-align: center;
 }
 
 .logo {
   width: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-.logo.top {
-  margin-top: -50px;
-  margin-bottom: 10px;
-}
-
-.loading-text {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #333;
-}
-
+.loading-text,
 .error-message {
-  color: #d9534f;
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.failed-card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.error-message {
+  color: #dc3545;
 }
 
 .failed-image {
   max-width: 280px;
-  border-radius: 8px;
+  height: auto;
+  object-fit: contain;
 }
 </style>
