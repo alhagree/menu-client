@@ -106,7 +106,10 @@ async mounted() {
     const data = await fetchMenuData(linkCode);
 
     this.clientName = data.client_name;
-    this.logoUrl = data.logoUrl || "/logo.png"; // ← لو الشعار يجي كامل من الباك احذف baseUrl 
+    this.logoUrl = data.logoUrl && data.logoUrl.trim() !== ""
+  ? data.logoUrl
+  : "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/logo.png?updatedAt=1753026004161";
+
 
     this.sections = data.sections.map((section) => {
       return {

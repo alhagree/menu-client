@@ -19,7 +19,7 @@
         </div>
         <div class="item-description">{{ item.description }}</div>
         <span v-if="item.badge" class="badge">جديد</span>
-        <span v-if="item.available === false" class="unavailable-badge">غير متوفر</span>
+        <span v-if="item.available === false" class="unavailable-badge">غير متاح</span>
       </div>
     </div>
   </div>
