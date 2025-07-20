@@ -83,11 +83,12 @@ export default {
   color: #dc3545;
 }
 
-.failed-image,
-.logo {
+.failed-image
+{
   max-width: 280px;
   height: auto;
   object-fit: contain;
   display: block;
+  margin-bottom: 50px;
 }
 </style>
