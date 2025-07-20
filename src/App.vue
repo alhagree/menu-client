@@ -7,9 +7,11 @@
     </div>
 
     <div v-else-if="error" class="error-container">
-      <img class="logo mb-3" :src="logoUrl" alt="Logo" />
+      <img class="logo top" :src="logoUrl" alt="Logo" />
       <p class="error-message">{{ error }}</p>
-      <img class="failed-image" :src="failedImageUrl" alt="Failed" />
+      <div class="failed-card">
+        <img class="failed-image" :src="failedImageUrl" alt="فشل" />
+      </div>
     </div>
 
     <div v-else>
@@ -23,9 +25,7 @@ import MenuView from "./views/MenuView.vue";
 import { fetchMenuData } from "./services/publicApi";
 
 export default {
-  components: {
-    MenuView,
-  },
+  components: { MenuView },
   data() {
     return {
       loading: true,
@@ -69,33 +69,43 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #eef1f4;
   text-align: center;
-  background-color: #f8f9fa;
   padding: 20px;
 }
 
 .logo {
   width: 100px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.logo.top {
+  margin-top: -50px;
+  margin-bottom: 10px;
 }
 
 .loading-text {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
-  color: #555;
+  color: #333;
 }
 
 .error-message {
-  color: #dc3545;
-  font-size: 1.2rem;
+  color: #d9534f;
+  font-size: 1.3rem;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.failed-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .failed-image {
   max-width: 280px;
-  border-radius: 10px;
-  margin-top: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 </style>
