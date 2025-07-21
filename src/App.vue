@@ -40,7 +40,7 @@ data() {
       subscription_expired: "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/expired.png"
     },
     errorColors: {
-      account_inactive: "#ffc107",          // أصفر
+      account_inactive: "#FF971E",          // أصفر
       subscription_inactive: "#6c757d",     // رمادي
       subscription_expired: "#dc3545"     // أحمر
     }
