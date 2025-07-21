@@ -35,39 +35,32 @@ export default {
         "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/failed.png?updatedAt=1753047083714",
     };
   },
-  async mounted() {
-    const params = new URLSearchParams(window.location.search);
-    const linkCode = params.get("link_code");
-    this.linkCode = linkCode;
+async mounted() {
+  const params = new URLSearchParams(window.location.search);
+  const linkCode = params.get("link_code");
+  this.linkCode = linkCode;
 
-    if (!linkCode) {
-      this.error = "الرابط غير صحيح أو مفقود.";
-      this.loading = false;
-      return;
-    }
+  if (!linkCode) {
+    this.error = "الرابط غير صحيح أو مفقود.";
+    this.loading = false;
+    return;
+  }
 
-    try {
-      const data = await fetchMenuData(linkCode);
-      this.menuData = data;
-    } catch (err) {
-    try {
-      const data = await fetchMenuData(linkCode);
-      this.menuData = data;
-    } catch (err) {
-      console.error("❌ API Error:", err);
+  try {
+    const data = await fetchMenuData(linkCode);
+    this.menuData = data;
+  } catch (err) {
+    console.error("❌ API Error:", err);
 
-      // فحص الرسالة القادمة من السيرفر
-      if (err.response && err.response.data && err.response.data.message) {
-        this.error = err.response.data.message;
-      } else {
-        this.error = "فشل في تحميل البيانات. تأكد من صحة الرابط.";
-      }
+    if (err.response && err.response.data && err.response.data.message) {
+      this.error = err.response.data.message;
+    } else {
+      this.error = "فشل في تحميل البيانات. تأكد من صحة الرابط.";
     }
-      console.error("❌ API Error:", err);
-    } finally {
-      this.loading = false;
-    }
-  },
+  } finally {
+    this.loading = false;
+  }
+},
 };
 </script>
 
