@@ -60,7 +60,12 @@
     rel="noopener"
     class="footer-content"
   >
-    <span>TIKLAMU - Software Solution</span>
+    <img
+      src="https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/small-logo.png?updatedAt=1753106773917"
+      alt="TIKLAMU Logo"
+      class="footer-logo me-2"
+    />
+    <span>TIKLAMU - Software Solution الحقوق محفوظة</span>
   </a>
 </footer>
 
