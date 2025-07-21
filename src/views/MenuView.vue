@@ -65,7 +65,7 @@
       alt="TIKLAMU Logo"
       class="footer-logo me-2"
     />
-    <span>TIKLAMU - Software Solution الحقوق محفوظة</span>
+    <span>TIKLAMU - Software Solution</span>
   </a>
 </footer>
 
