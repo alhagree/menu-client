@@ -35,14 +35,14 @@ data() {
     failedImageUrl:
       "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/failed.png",
     errorImages: {
-      "الحساب غير مفعل": "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/inactive.png",
-      "لا يوجد اشتراك فعّال": "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/no-subscription.png",
-      "انتهت صلاحية الاشتراك": "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/expired.png"
+      account_inactive: "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/inactive.png",
+      subscription_inactive: "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/no-subscription.png",
+      subscription_expired: "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/expired.png"
     },
     errorColors: {
-      "الحساب غير مفعل": "#ffc107",          // أصفر
-      "لا يوجد اشتراك فعّال": "#6c757d",     // رمادي
-      "انتهت صلاحية الاشتراك": "#dc3545"     // أحمر
+      account_inactive: "#ffc107",          // أصفر
+      subscription_inactive: "#6c757d",     // رمادي
+      subscription_expired: "#dc3545"     // أحمر
     }
   };
 },
@@ -71,7 +71,7 @@ async mounted() {
   } catch (err) {
     if (err.response?.data?.message) {
       this.error = err.response.data.message;
-      this.errorType = err.response.data.message;
+      this.errorType = err.response.data.error_code || null; // ← نستخدم error_code
     } else {
       this.error = "فشل في تحميل البيانات. تأكد من صحة الرابط.";
       this.errorType = null;
