@@ -52,6 +52,19 @@
     ⬆ العودة للأعلى
   </button>
 
+<!-- ✅ الفوتر الثابت -->
+<footer class="menu-footer">
+  <a
+    href="https://tiklamu.com"
+    target="_blank"
+    rel="noopener"
+    class="footer-content"
+  >
+    <span>TIKLAMU - Software Solution | © 2025 جميع الحقوق محفوظة</span>
+  </a>
+</footer>
+
+
 </template>
 
 <script>
