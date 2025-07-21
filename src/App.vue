@@ -8,7 +8,7 @@
 
     <div v-else-if="error" class="centered-container">
       <img class="failed-image" :src="logoUrl" alt="Logo" />
-      <p class="error-message">{{ error }}</p>
+      <p class="error-message" :style="{ color: errorColor }">{{ error }}</p>
       <img class="failed-image" :src="errorImage" alt="فشل" />
     </div>
 
@@ -103,10 +103,6 @@ async mounted() {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 20px;  
-}
-
-.error-message {
-  color: #dc3545;
 }
 
 .failed-image
