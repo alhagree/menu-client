@@ -50,7 +50,19 @@ export default {
       const data = await fetchMenuData(linkCode);
       this.menuData = data;
     } catch (err) {
-      this.error = "فشل في تحميل البيانات. تأكد من صحة الرابط.";
+    try {
+      const data = await fetchMenuData(linkCode);
+      this.menuData = data;
+    } catch (err) {
+      console.error("❌ API Error:", err);
+
+      // فحص الرسالة القادمة من السيرفر
+      if (err.response && err.response.data && err.response.data.message) {
+        this.error = err.response.data.message;
+      } else {
+        this.error = "فشل في تحميل البيانات. تأكد من صحة الرابط.";
+      }
+    }
       console.error("❌ API Error:", err);
     } finally {
       this.loading = false;
