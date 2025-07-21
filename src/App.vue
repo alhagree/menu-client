@@ -65,24 +65,23 @@ async mounted() {
     return;
   }
 
-try {
-  const data = await fetchMenuData(linkCode);
-  this.menuData = data;
-} catch (err) {
-  console.error("❌ API Error:", err);
-
-  if (err.response?.data?.message) {
-    this.error = err.response.data.message;
-    this.errorType = err.response.data.message;
-  } else {
-    this.error = "فشل في تحميل البيانات. تأكد من صحة الرابط.";
-    this.errorType = null;
+  try {
+    const data = await fetchMenuData(linkCode);
+    this.menuData = data;
+  } catch (err) {
+    if (err.response?.data?.message) {
+      this.error = err.response.data.message;
+      this.errorType = err.response.data.message;
+    } else {
+      this.error = "فشل في تحميل البيانات. تأكد من صحة الرابط.";
+      this.errorType = null;
+      console.error("❌ API Error:", err);
+    }
   }
-}
- finally {
-    this.loading = false;
-  }
-},
+  finally {
+      this.loading = false;
+    }
+  },
 };
 </script>
 
