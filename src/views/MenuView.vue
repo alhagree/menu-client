@@ -60,7 +60,7 @@
     rel="noopener"
     class="footer-content"
   >
-    <span>TIKLAMU - Software Solution | © 2025 جميع الحقوق محفوظة</span>
+    <span>TIKLAMU - Software Solution</span>
   </a>
 </footer>
 
