@@ -37,8 +37,7 @@ button {
   padding: 10px;
   width: 100%;
   max-width: none;
-  direction: rtl;
-  padding-bottom: 60px;
+  direction: rtl;  
 }
 
 .header {
@@ -138,6 +137,7 @@ button {
 .sections-wrapper {    
   z-index: 1;  
   position: relative;
+  padding-bottom: 60px;
 }
 .section-block {
   margin-bottom: 30px;
