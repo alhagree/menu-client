@@ -9,7 +9,7 @@
     <div v-else-if="error" class="centered-container">
       <img class="failed-image" :src="logoUrl" alt="Logo" />
       <p class="error-message">{{ error }}</p>
-      <img class="failed-image" :src="failedImageUrl" alt="فشل" />
+      <img class="failed-image" :src="errorImage" alt="فشل" />
     </div>
 
     <div v-else>
@@ -24,17 +24,36 @@ import { fetchMenuData } from "./services/publicApi";
 
 export default {
   components: { MenuView },
-  data() {
-    return {
-      loading: true,
-      error: null,
-      menuData: null,
-      logoUrl:
-        "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/logo.png?updatedAt=1753026004161",
-      failedImageUrl:
-        "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/failed.png?updatedAt=1753047083714",
-    };
+data() {
+  return {
+    loading: true,
+    error: null,
+    errorType: null,
+    menuData: null,
+    logoUrl:
+      "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/logo.png",
+    failedImageUrl:
+      "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/failed.png",
+    errorImages: {
+      "الحساب غير مفعل": "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/inactive.png",
+      "لا يوجد اشتراك فعّال": "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/no-subscription.png",
+      "انتهت صلاحية الاشتراك": "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/expired.png"
+    },
+    errorColors: {
+      "الحساب غير مفعل": "#ffc107",          // أصفر
+      "لا يوجد اشتراك فعّال": "#6c757d",     // رمادي
+      "انتهت صلاحية الاشتراك": "#dc3545"     // أحمر
+    }
+  };
+},
+computed: {
+  errorImage() {
+    return this.errorImages[this.errorType] || this.failedImageUrl;
   },
+  errorColor() {
+    return this.errorColors[this.errorType] || "#dc3545"; // الافتراضي أحمر
+  }
+},
 async mounted() {
   const params = new URLSearchParams(window.location.search);
   const linkCode = params.get("link_code");
@@ -46,18 +65,21 @@ async mounted() {
     return;
   }
 
-  try {
-    const data = await fetchMenuData(linkCode);
-    this.menuData = data;
-  } catch (err) {
-    console.error("❌ API Error:", err);
+try {
+  const data = await fetchMenuData(linkCode);
+  this.menuData = data;
+} catch (err) {
+  console.error("❌ API Error:", err);
 
-    if (err.response && err.response.data && err.response.data.message) {
-      this.error = err.response.data.message;
-    } else {
-      this.error = "فشل في تحميل البيانات. تأكد من صحة الرابط.";
-    }
-  } finally {
+  if (err.response?.data?.message) {
+    this.error = err.response.data.message;
+    this.errorType = err.response.data.message;
+  } else {
+    this.error = "فشل في تحميل البيانات. تأكد من صحة الرابط.";
+    this.errorType = null;
+  }
+}
+ finally {
     this.loading = false;
   }
 },
