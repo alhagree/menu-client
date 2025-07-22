@@ -146,6 +146,20 @@ async mounted() {
     this.error = true;
   }
 },
+watch: {
+  selectedItem(newVal) {
+    if (newVal) {
+      document.body.style.overflow = "hidden"; // 🔒 إيقاف السكرول
+    } else {
+      document.body.style.overflow = ""; // 🔓 تفعيل السكرول
+    }
+  },
+
+
+},
+  beforeUnmount() {
+  document.body.style.overflow = ""; // احتياطي
+},
   methods: {
     scrollToSection(index) {
       const el = this.sectionRefs[index];
