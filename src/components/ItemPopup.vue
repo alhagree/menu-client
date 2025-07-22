@@ -1,5 +1,5 @@
 <template>
-  <div class="popup-backdrop">
+  <div class="popup-backdrop" @click.self="$emit('close')">
     <div class="popup-card">
       <div class="popup-content">
         <!-- الصورة -->
@@ -16,8 +16,9 @@
 
           <p class="popup-desc">{{ item.description }}</p>
           <div class="popup-info">
-            <span>السعر : {{ item.price }} IQD</span>            
+            <span>السعر : {{ item.price }} IQD</span>
           </div>
+
           <button class="close-btn" @click="$emit('close')">إغلاق</button>
         </div>
       </div>
