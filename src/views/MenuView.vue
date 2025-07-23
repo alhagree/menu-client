@@ -117,6 +117,7 @@ async mounted() {
 
   try {
     const data = await fetchMenuData(linkCode);
+    console.log("📥 البيانات القادمة من السيرفر:", data);
 
     this.clientName = data.client_name;
     this.logoUrl = data.logo_url || "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/logo.png?updatedAt=1753026004161";
