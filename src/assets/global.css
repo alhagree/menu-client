@@ -197,25 +197,18 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
 }
 
 .item-name {
   font-size: 15px;
   font-weight: bold;
   color: #222;
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .item-price {
   font-weight: bold;
   color: #5E8773;
   font-size: 16px;
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
 .item-description {
