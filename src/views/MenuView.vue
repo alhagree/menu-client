@@ -119,7 +119,10 @@ async mounted() {
     const data = await fetchMenuData(linkCode);
 
     this.clientName = data.client_name;
-    this.logoUrl = data.logo_url || "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/logo.png?updatedAt=1753026004161";
+    this.logoUrl = data.logo_url
+  ? `https://ik.imagekit.io/idbeilkk4/menu_project/clients/${linkCode}/settings/${data.logo_url}`
+  : "https://ik.imagekit.io/idbeilkk4/menu_project/defulat_image/logo.png";
+
 
 this.sections = data.sections.map((section) => {
   return {
